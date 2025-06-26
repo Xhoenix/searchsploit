@@ -128,6 +128,9 @@ When a multi-term search returns no results, SearchSploit will now automatically
 
 **Usage:**
 ```bash
+┌──(hash㉿kali)-[~/pentest/exploitdb]
+└─$ searchsploit Samba smbd 3.0.20
+
 Exploits: No Results
 Shellcodes: No Results
 
