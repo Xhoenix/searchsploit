@@ -1054,8 +1054,8 @@ done
 
 ORIG_ARGS=("$@")
 
-# Keyword-fallback: if no results and multiple search terms
-if [[ "${RESULTS_FOUND}" -eq 0 ]] && [[ "${TAGS}" =~ " " ]]; then
+# Keyword-fallback on any multi-term query
+if [[ "${TAGS}" == *" "* ]]; then
   echo -e "\n[i] No exact results for: ${TAGS}\n"
   echo "Showing related results per keyword:"
   read -ra KW_ARRAY <<< "${TAGS}"
