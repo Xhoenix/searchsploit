@@ -1052,6 +1052,8 @@ for (( i=0; i<${arraylength}; i++ )); do
   COLOUR_TAG=""
 done
 
+ORIG_ARGS=("$@")
+
 # Keyword-fallback: if no results and multiple search terms
 if [[ "${RESULTS_FOUND}" -eq 0 ]] && [[ "${TAGS}" =~ " " ]]; then
   echo -e "\n[i] No exact results for: ${TAGS}\n"
@@ -1059,7 +1061,7 @@ if [[ "${RESULTS_FOUND}" -eq 0 ]] && [[ "${TAGS}" =~ " " ]]; then
   read -ra KW_ARRAY <<< "${TAGS}"
   for kw in "${KW_ARRAY[@]}"; do
     echo -e "\n--- [${kw}] ---"
-    bash "$0" "${kw}"
+    bash "$0" "${ORIG_ARGS[@]/$TAGS/$kw}"
   done
 fi
 
