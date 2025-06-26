@@ -45,6 +45,9 @@ COLOUR_OFF_GREP=
 COLOUR_ON_GREP=
 REGEX_GREP=
 
+# track whether any results were printed
+RESULTS_FOUND=0
+
 ## Check if our grep supports --color (BSD vs GNU)
 if grep --help 2>&1 | grep "[-]-color" >/dev/null 2>&1; then
   COLOUR_OFF_GREP="--color=never"
@@ -677,6 +680,9 @@ function printresults() {
   ## Show content
   [[ "${OUTPUT}" ]] \
     && echo "${OUTPUT}"
+  if [[ -n "${OUTPUT}" ]]; then
+    RESULTS_FOUND=1
+  fi
 
   ## Print footer if in JSON ("--json")
   if [[ "${JSON}" -eq 1 ]]; then
@@ -1045,6 +1051,17 @@ for (( i=0; i<${arraylength}; i++ )); do
   ## Reset
   COLOUR_TAG=""
 done
+
+# Keyword-fallback: if no results and multiple search terms
+if [[ "${RESULTS_FOUND}" -eq 0 ]] && [[ "${TAGS}" =~ " " ]]; then
+  echo -e "\n[i] No exact results for: ${TAGS}\n"
+  echo "Showing related results per keyword:"
+  read -ra KW_ARRAY <<< "${TAGS}"
+  for kw in "${KW_ARRAY[@]}"; do
+    echo -e "\n--- [${kw}] ---"
+    bash "$0" "${kw}"
+  done
+fi
 
 ## Print footer if in JSON ("--json")
 [[ "${JSON}" -eq 1 ]] \

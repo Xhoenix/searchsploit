@@ -122,6 +122,54 @@ File Type: Python script text executable, ASCII text
 Copied EDB-ID #39446's path to the clipboard
 kali@kali:~$
 ```
+### Keyword Fallback Search
+
+When a multi-term search returns no results, SearchSploit will now automatically retry each individual term.
+
+**Usage:**
+```bash
+Exploits: No Results
+Shellcodes: No Results
+
+[i] No exact results for: Samba smbd 3.0.20
+
+Showing related results per keyword:
+
+--- [Samba] ---
+------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                       |  Path
+------------------------------------------------------------------------------------- ---------------------------------
+GoSamba 1.0.1 - 'INCLUDE_PATH' Multiple Remote File Inclusions                       | php/webapps/4575.txt
+Microsoft Windows XP/2003 - Samba Share Resource Exhaustion (Denial of Service)      | windows/dos/148.sh
+Samba 1.9.19 - 'Password' Remote Buffer Overflow                                     | linux/remote/20308.c
+Samba 2.0.7 - SWAT Logfile Permissions                                               | linux/local/20341.sh
+Samba 2.0.7 - SWAT Logging Failure                                                   | unix/remote/20340.c
+SWAT Samba Web Administration Tool - Cross-Site Request Forgery                      | cgi/webapps/17577.txt
+------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+
+--- [smbd] ---
+------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                       |  Path
+------------------------------------------------------------------------------------- ---------------------------------
+smbftpd 0.96 - SMBDirList-function Remote Format String                              | linux/remote/4478.c
+------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+
+--- [3.0.20] ---
+------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                       |  Path
+------------------------------------------------------------------------------------- ---------------------------------
+CubeCart 3.0.20 - '/admin/login.php?goto' Arbitrary Site Redirect                    | php/webapps/36686.txt
+CubeCart 3.0.20 - 'switch.php?r' Arbitrary Site Redirect                             | php/webapps/36687.txt
+CubeCart 3.0.20 - Multiple Script 'redir' Arbitrary Site Redirects                   | php/webapps/36685.txt
+Maxthon Browser 3.0.20.1000 - ref / replace Denial of Service                        | windows/dos/16084.html
+Samba 3.0.20 < 3.0.25rc3 - 'Username' map script' Command Execution (Metasploit)     | unix/remote/16320.rb
+Samba < 3.0.20 - Remote Heap Overflow                                                | linux/remote/7701.txt
+Spy Emergency 23.0.205 - Unquoted Service Path Privilege Escalation                  | windows/local/40550.txt
+------------------------------------------------------------------------------------- ---------------------------------
+Shellcodes: No Results
+```
 
 - - -
 
