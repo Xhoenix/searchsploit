@@ -1052,8 +1052,6 @@ for (( i=0; i<${arraylength}; i++ )); do
   COLOUR_TAG=""
 done
 
-ORIG_ARGS=("$@")
-
 # Keyword-fallback on any multi-term query
 if [[ "${TAGS}" == *" "* ]]; then
   echo -e "\n[i] No exact results for: ${TAGS}\n"
@@ -1061,7 +1059,7 @@ if [[ "${TAGS}" == *" "* ]]; then
   read -ra KW_ARRAY <<< "${TAGS}"
   for kw in "${KW_ARRAY[@]}"; do
     echo -e "\n--- [${kw}] ---"
-    bash "$0" "${ORIG_ARGS[@]/$TAGS/$kw}"
+    bash "$0" "${kw}"
   done
 fi
 
