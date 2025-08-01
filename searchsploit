@@ -44,6 +44,7 @@ VERSION=
 COLOUR_OFF_GREP=
 COLOUR_ON_GREP=
 REGEX_GREP=
+EXACT_CVE_ID=0
 
 ## Check if our grep supports --color (BSD vs GNU)
 if grep --help 2>&1 | grep "[-]-color" >/dev/null 2>&1; then
@@ -98,6 +99,7 @@ function usage() {
   echo "       --exclude=\"term\"       Remove values from results. By using \"|\" to separate, you can chain multiple values"
   echo "                                e.g. --exclude=\"term1|term2|term3\""
   echo "       --cve      [CVE]       Search for Common Vulnerabilities and Exposures (CVE) value"
+  echo "       --ecve                 Perform a search that matches exact CVE value"
   echo ""
   echo "## Output"
   echo "   -j, --json     [term]      Show result in JSON format"
@@ -440,7 +442,13 @@ function buildterms() {
   ## Search both title AND path
   if [[ "${FILEPATH}" -eq 1 ]]; then
     ## Search command for each term (with case sensitive flag, "-c")
-    SEARCH="${SEARCH} | grep ${COLOUR_OFF_GREP} -F ${CASE_TAG_GREP} \"${tag_in}\""
+    if [[ "${EXACT_CVE_ID}" -eq 1 ]]; then
+      ## Search CVE with exact CVE number
+      SEARCH="${SEARCH} | grep ${COLOUR_OFF_GREP} -Fw ${CASE_TAG_GREP} \"${tag_in}\""
+    else
+      ## The original version
+      SEARCH="${SEARCH} | grep ${COLOUR_OFF_GREP} -F ${CASE_TAG_GREP} \"${tag_in}\""
+    fi
 
   ## Search just the title, NOT the path ("-t"/"-e")
   else
@@ -726,6 +734,8 @@ for param in "$@"; do
     COLOUR=""
   elif [[ "${param}" == "--cve" ]]; then
     CVE=1
+  elif [[ "${param}" == "--ecve" ]]; then
+    EXACT_CVE_ID=1
   elif [[ "${param}" == "--exact" ]]; then
     EXACT=1
   elif [[ "${param}" == "--examine" ]] || [[ "${param}" == "--open" ]] || [[ "${param}" == "--view" ]]; then
