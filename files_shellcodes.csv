@@ -828,6 +828,7 @@ id,file,description,date_published,author,type,platform,size,date_added,date_upd
 46975,shellcodes/linux_x86-64/46975.c,"Linux/x86_64 - Bind (4444/TCP) Shell (/bin/sh) Shellcode (131 bytes)",2019-06-07,"Aron Mihaljevic",,linux_x86-64,131,2019-06-07,2019-06-07,0,,,,,,
 46870,shellcodes/linux_x86-64/46870.c,"Linux/x86_64 - Delete File (test.txt) Shellcode (28 bytes)",2019-05-20,"Aron Mihaljevic",,linux_x86-64,28,2019-05-20,2019-05-20,0,,,,,,
 47292,shellcodes/linux_x86-64/47292.c,"Linux/x86_64 - execve(_/bin/sh_) + AVX2 XOR Decoder Shellcode (62 bytes)",2019-08-19,"Gonçalo Ribeiro",,linux_x86-64,62,2019-08-19,2021-01-15,0,,,,,,
+52395,shellcodes/linux_x86-64/52395.c,"Linux/x86_64 - execve(_/bin/sh__[_-c__cmd]_NULL) Arbitrary Command Execution Shellcode (63 bytes)",2025-08-04,"Muzaffer Umut ŞAHİN",,linux_x86-64,63,2025-08-04,2025-08-04,0,,,,,,
 47008,shellcodes/linux_x86-64/47008.c,"Linux/x86_64 - execve(/bin/sh) Shellcode (22 bytes)",2019-06-18,"Aron Mihaljevic",,linux_x86-64,22,2019-06-18,2019-06-18,0,,,,,,
 47025,shellcodes/linux_x86-64/47025.c,"Linux/x86_64 - Reverse (0.0.0.0:4444/TCP) Shell (/bin/sh) Shellcode",2019-06-24,"Aron Mihaljevic",,linux_x86-64,,2019-06-24,2019-06-27,0,,,,,,
 47291,shellcodes/linux_x86-64/47291.c,"Linux/x86_64 - Reverse (127.0.0.1:4444/TCP) Shell (/bin/sh) + Password (pass) Shellcode (120 bytes)",2019-08-19,"Gonçalo Ribeiro",,linux_x86-64,120,2019-08-19,2019-08-20,0,,,,,,
