@@ -916,6 +916,7 @@ id,file,description,date_published,author,type,platform,size,date_added,date_upd
 38075,shellcodes/system_z/38075.txt,"Mainframe/System Z - Bind (12345/TCP) Shell + Null-Free Shellcode (2488 bytes)",2015-09-02,"Bigendian Smalls",,system_z,2488,2015-09-02,2015-09-02,0,,,,,,
 13503,shellcodes/unixware/13503.c,"UnixWare - execve(/bin/sh) Shellcode (95 bytes)",2004-09-26,K2,,unixware,95,2004-09-25,,1,,,,,,
 14221,shellcodes/windows/14221.html,"Safari 4.0.5 < 5.0.0 (Windows XP/7) - JavaScript JITed exec calc (ASLR/DEP Bypass) + Null-Free Shellcode",2010-07-05,"Alexey Sintsov",,windows,,2010-07-05,2010-07-05,1,,,,,,http://shell-storm.org/shellcode/files/shellcode-673.php
+52599,shellcodes/windows/52599.c,"Win32 - Calc Shellcode",2026-05-29,"Fernando Mengali",,windows,,2026-05-29,2026-05-29,0,,,,,,
 24318,shellcodes/windows/24318.c,"Windows (2000/XP/7) - URLDownloadToFile(http://bflow.security-portal.cz/down/xy.txt) + WinExec() + ExitProcess Shellcode",2013-01-24,RubberDuck,,windows,,2013-01-24,2018-01-02,1,,,,,,
 39979,shellcodes/windows/39979.c,"Windows (XP < 10) - Download File + Execute Shellcode",2016-06-20,B3mB4m,,windows,,2016-06-20,2016-06-20,0,,,,,,
 13581,shellcodes/windows/13581.txt,"Windows (XP Professional SP2) (English) - MessageBox + Null-Free Shellcode (16 bytes)",2010-01-03,Aodrulez,,windows,16,2010-01-02,2018-01-18,1,,,,,,http://shell-storm.org/shellcode/files/shellcode-526.php
